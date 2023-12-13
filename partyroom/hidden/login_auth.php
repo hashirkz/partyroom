@@ -9,33 +9,40 @@ $username = $password = "";
 
 $username = sanitize($_POST["username"]);
 $password = sanitize($_POST["password"]);
-$hash = password_hash($password, PASSWORD_DEFAULT);
+// $hash = password_hash($password, PASSWORD_DEFAULT);
 // [$hash, $salt] = hash_salt($password);
 
 // db conn
-$db = sqlite3_conn($_ENV['db_path']);
-printf "$_ENV['db_path']\n";
+$db = sqlite3_conn($_SERVER['DOCUMENT_ROOT'] . "../.." . $_ENV['db_path']);
 
 // query for username / hashword
-$query = "SELECT * FROM users AS u WHERE u.username == $username;";
+$query = "SELECT * FROM users WHERE users.username == :username";
+$stmn = $db->prepare($query);
+$stmn->bindValue(':username', $username, SQLITE3_TEXT);
 
-// $query.bindValue(":username", $username);
-$resp = $db->query($query);
-echo "[$resp]";
-// username not in db
-if (!$resp) {
-    echo "user: $username does not exist";
+$resp = $stmn->execute();
+
+$user = fetch_all($resp)[0];
+if (!password_verify($password, $user['hashword'])) {
+    die('oh no wrong username or password');
 }
-// $user = $resp->fetchArray(SQLITE3_ASSOC);
-// $pass_on_db = $user['hashword'];
 
-// if ($hashword != $hashword_on_db) {
-//     echo "incorrect password for $username";
+echo 'yay logged in ';
+
+
+
+
+// var_dump($data);
+// // bad username
+// if (empty($data)) { echo "$username does not exist"; }
+
+// // fetch salt and hash and compare given password
+// foreach ($data as $row) {
+//     $hashword_in_db = $row['hashword'];
+//     $salt = $row['salt'];
 // }
-
-
-// auth hashword
-// printf("username: %s\n\nhash: %s\n\nsalt: %s", $username, $hash, $salt);
+// $p1 = password_hash($password . $salt, PASSWORD_DEFAULT);
+// printf("client: %s\non db: %s\n", $p1, $hashword_in_db);
 
 
 ?>

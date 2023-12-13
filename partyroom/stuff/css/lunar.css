@@ -6,29 +6,73 @@
     justify-content: center; */
 
     color: #9cc2ff;
+    text-decoration: none;
     background-color: #01011c;
     font-family: "Courier New";
 }
 
-/* head title {
+head title {
+    display: none;
     justify-content: center;
-} */
-
-.hidden_button {
-    width: 0px;
-    height: 0px;
-    display: none !important;
+    height: 20vh;
 }
 
-.button_wrapper {
-    width: 100%;
-    height: 100%;
-
+.login-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+}
+
+.button-container input {
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #c3b3ff;
+    width: 100%;
+    /* border-radius: 10px; */
+
+    font-size: 20px;
+    margin-bottom: 25px;
+    transition: border 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.button-container input:focus {
+    outline: none;
+}
+
+
+.hidden {
+    display: none;
+    visibility: none;
 }
 
 script {
     display: none;
     visibility: hidden;
 }
+
+#login {
+    position:relative;
+    margin: 0;
+}
+
+
+
+/* <form id="login">
+<div class="button_wrapper">
+    username: <input type="text" name="username" value="<?php echo $username; ?>"><br>
+    password: <input type="text" name="password" value="<?php echo $password; ?>"><br>
+    <input type="submit" value="login">
+</div>
+</form> */

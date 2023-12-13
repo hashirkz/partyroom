@@ -6,7 +6,7 @@
     <title>partyroom</title>
 
     <!-- themes -->
-    <link rel="stylesheet" href="./stuff/css/lunar.css">
+    <link rel="stylesheet" href="../stuff/css/lunar.css">
 
     <!--js libraries -->
     <!-- jquery -->
@@ -29,6 +29,6 @@
         </div>
     </form>
 
-<script src="/stuff/js/login.js" defer></script>
+<script src="/stuff/js/signup.js" defer></script>
 </body>
 </html>

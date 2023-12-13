@@ -1,9 +1,8 @@
 CREATE TABLE users (
-    uid INTEGER PRIMARY KEY,
+    uid INTEGER PRIMARY KEY AUTOINCREMENT,
 
     username TEXT NOT NULL UNIQUE,
-    hashword TEXT NOT NULL,
-    salt TEXT NOT NULL
+    hashword TEXT NOT NULL
 );
 
 CREATE TABLE posts (

@@ -63,4 +63,12 @@ function sqlite3_conn($path) {
         die("error: " . $e->getMessage());
     }
 }
+
+function fetch_all($resp) {
+    $rows = array();
+    while ($row = $resp->fetchArray(SQLITE3_ASSOC)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
 ?>
