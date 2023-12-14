@@ -6,7 +6,7 @@
     <title>partyroom</title>
 
     <!-- themes -->
-    <link rel="stylesheet" href="../stuff/css/lunar.css">
+    <link rel="stylesheet" href="../stuff/themes/lunar.css">
 
     <!--js libraries -->
     <!-- jquery -->
