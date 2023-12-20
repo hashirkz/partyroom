@@ -47,13 +47,11 @@
     object-position: center;
     border-radius: 20px;
 
-    transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1),
-                height 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+    transition: height 1s cubic-bezier(0.075, 0.82, 0.165, 1),
                 border-radius 1s ease-in-out;
 } 
 
 .img-container img:hover {
-    width: calc(var(--tile-width)*1.4);
     height: calc(var(--tile-width)*1.4);
     border-radius: 7px;
 }

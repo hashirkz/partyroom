@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>partyroom</title>
 
+    <!-- fav -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
     <!-- themes -->
     <link rel="stylesheet" href="./stuff/themes/lunar.css">
 

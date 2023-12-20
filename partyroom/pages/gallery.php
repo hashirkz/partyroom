@@ -24,14 +24,31 @@
     
 </head>
 <body>
-    <div id="gallery">
-        <?php 
-            foreach($imgs as $img) {
-                $name = basename($img);
-                $name = preg_replace('/\.\w+$/', '', $name);
-                include '../components/tile.php';
-            }
-        ?>
+    <div class="column-wrapper">
+        <!-- <h1>gallery</h1> -->
+        <ul id="ribbon">
+            <li class="ribbon-item">
+                <img src="/stuff/svgs/placeholder.svg" alt="ribbon-item">
+            </li>
+            <li class="ribbon-item">
+                <img src="/stuff/svgs/placeholder.svg" alt="ribbon-item">
+            </li>
+            <li class="ribbon-item">
+                <img src="/stuff/svgs/placeholder.svg" alt="ribbon-item">
+            </li>
+            <li class="ribbon-item">
+                <img src="/stuff/svgs/placeholder.svg" alt="ribbon-item">
+            </li>
+        </ul>
+        <div id="gallery">
+            <?php 
+                foreach($imgs as $img) {
+                    $name = basename($img);
+                    $name = preg_replace('/\.\w+$/', '', $name);
+                    include '../components/tile.php';
+                }
+            ?>
+        </div>
     </div>
 </body>
 </html>

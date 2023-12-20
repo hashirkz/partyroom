@@ -67,22 +67,56 @@ script {
     margin: 0;
 }
 
+.column-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+    overflow-x: hidden;
+    /* margin: 20px; */
+}
+
+#ribbon {
+    display: flex;
+    width: 87vw;
+    height: 25px;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 20px;
+
+    border-radius: 5px;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.ribbon-item {
+    margin: 0;
+    width: 80px;
+    height: 25px;
+}
+
+.ribbon-item:hover {
+    opacity: 0.6;
+}
+
+.ribbon-item img {
+    object-fit: cover;
+}
+
 
 #gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--tile-width), 1fr));
     row-gap: 20px;
     column-gap: 20px;
-    width: calc(100vw - 80px);
+    width: 90vw;
 
     margin: 40px;
     overflow-x: hidden;
-    /* display: flex;
-    flex-wrap: wrap;
-
-    width: 100ww;
-    height: 100vh;
-    white-space: no-wrap; */
 }
 
 

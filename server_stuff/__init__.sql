@@ -6,7 +6,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE posts (
-    pid INTEGER PRIMARY KEY,
+    pid INTEGER PRIMARY KEY AUTOINCREMENT,
     uid INTEGER,
 
     description TEXT,
@@ -15,7 +15,7 @@ CREATE TABLE posts (
 );
 
 CREATE TABLE imgs (
-    iid INTEGER PRIMARY KEY,
+    iid INTEGER PRIMARY KEY AUTOINCREMENT,
     pid INTEGER UNQIUE,
 
     img_name TEXT NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE imgs (
 );
 
 CREATE TABLE comments (
-    cid INTEGER PRIMARY KEY,
+    cid INTEGER PRIMARY KEY AUTOINCREMENT,
     uid INTEGER,
     pid INTEGER,
 
