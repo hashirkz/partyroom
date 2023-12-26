@@ -23,11 +23,11 @@
         <div class="login-container">
             <div class="button-container">
                 <input id="username" type="text" name="username" placeholder="username?" 
-                value="<?php echo $username; ?>">
+                value="<?php echo $username ? $username : ""; ?>">
             </div>
             <div class="button-container">
                 <input id="password" type="password" name="password" placeholder="password?" 
-                value="<?php echo $password; ?>">
+                value="<?php echo $password ? $password : ""; ?>">
             </div>
             <input class='hidden' type="submit" value="login">
         </div>

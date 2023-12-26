@@ -1,6 +1,6 @@
 <div class="tile">
     <div class="img-container">
-        <img src="<?php echo $img; ?>" alt="tile">
+        <img src="<?php echo $img_path; ?>" alt="tile">
     </div>
-    <p class="name"><?php echo $name; ?></p>
+    <p class="name"><?php echo $img_name; ?></p>
 </div>

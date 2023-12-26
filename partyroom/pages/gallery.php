@@ -1,18 +1,21 @@
 <?php 
-   
-    $directory = "../stuff/imgs";
-    $files = scandir($directory);
-    $imgs = array();
-    foreach($files as $file) {
-        if ($file === "." || $file === "..") {
-            continue;
-        }
-        $imgs[] = $directory . '/' . $file;
-    }
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/structures/db.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/structures/__utils__.php';
+    $q = "SELECT i.img_name, i.img_path FROM imgs AS i";
+    $stmn = db::conn()->prepare($q);
+    $imgs = read_resp($stmn->execute());
+    // $directory = "../stuff/imgs";
+    // $files = scandir($directory);
+    // $imgs = array();
+    // foreach($files as $file) {
+    //     if ($file === "." || $file === "..") {
+    //         continue;
+    //     }
+    //     $imgs[] = $directory . '/' . $file;
+    // }
 
     // $imgs = array_diff($files, array('.', '..'));
 ?> 
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,8 +46,9 @@
         <div id="gallery">
             <?php 
                 foreach($imgs as $img) {
-                    $name = basename($img);
-                    $name = preg_replace('/\.\w+$/', '', $name);
+                    $img_name = $img["img_name"];
+                    $img_path = $img["img_path"];
+                    // $name = preg_replace('/\.\w+$/', '', $name);
                     include '../components/tile.php';
                 }
             ?>
