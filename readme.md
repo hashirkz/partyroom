@@ -7,3 +7,7 @@ nothing to see here...
 
 ## e.x for gallery page
 ![working.gif](./data/working.gif)  
+
+
+### e.x for upload page
+![uploading.png](./data/uploading.png)  
