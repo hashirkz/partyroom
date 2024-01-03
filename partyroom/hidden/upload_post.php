@@ -20,8 +20,13 @@ try {
         move_uploaded_file($img["tmp_name"], $mv_path);
         $img_h = new img(1, $img_name, $img_path, $fmt, $img["size"]);
         $img_h->save();
-        echo $img_h;
-        echo "yay";
+
+        $resp = array (
+            "img_name" => $img_name,
+            "img_path" => $img_path
+        );
+
+        echo json_encode($resp);
         // img = new img(1, )
         
         

@@ -4,18 +4,8 @@
     $q = "SELECT i.img_name, i.img_path FROM imgs AS i";
     $stmn = db::conn()->prepare($q);
     $imgs = read_resp($stmn->execute());
-    // $directory = "../stuff/imgs";
-    // $files = scandir($directory);
-    // $imgs = array();
-    // foreach($files as $file) {
-    //     if ($file === "." || $file === "..") {
-    //         continue;
-    //     }
-    //     $imgs[] = $directory . '/' . $file;
-    // }
-
-    // $imgs = array_diff($files, array('.', '..'));
 ?> 
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

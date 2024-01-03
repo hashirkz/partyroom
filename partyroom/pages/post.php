@@ -7,6 +7,7 @@
 
     <!-- themes -->
     <link rel="stylesheet" href="../stuff/themes/lunar.css">
+    <link rel="stylesheet" href="../stuff/css/tile.css">
 
     <!--js libraries -->
     <!-- jquery -->
@@ -14,15 +15,22 @@
 
 </head>
 <body>
-    <form id="upload-post">
-        <div class="button-container">
-            
-            <input id="img-name" type="text" name="img-name" placeholder="name?" 
-            value="<?php echo $img_name; ?>">
+    <div class="row-card">
+        <?php 
+            include '../components/tile.php';
+        ?>
+        <form id="upload-post">
+            <div class="button-container">
+                
+                <input id="img-name" type="text" name="img-name" placeholder="name?" 
+                value="<?php echo $img_name; ?>">
 
-            <input id="img-path" name="img-path" type="file" placeholder="img?">
-        </div>
-    </form>
+                <input id="img-path" name="img-path" type="file" placeholder="img?">
+            </div>
+        </form>
+    
+
+    </div>
 
 <script src="/stuff/js/post.js" defer></script>
 </body>

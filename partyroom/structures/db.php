@@ -29,6 +29,15 @@ class db {
         }
         return self::$conn;
     }
+
+    // read query results into array
+    public static function read_resp(SQLite3Result $resp): array {
+        $rows = array();
+        while ($row = $resp->fetchArray(SQLITE3_ASSOC)) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
 }
 
 ?>

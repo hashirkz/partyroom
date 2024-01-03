@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('html').css('--tile-width', '500px');
     $('#upload-post').submit(function (e) {
         e.preventDefault();
         
@@ -20,10 +21,15 @@ $(document).ready(function () {
             processData: false,
             success: function(response) {
                 console.log('success:\n', response);
+
+                resp = JSON.parse(response);
+                $('.tile .name').text(resp.img_name);
+                $('.tile .img-container img').attr('src', resp.img_path);
             },
             error: function(xhr, status, error) {
                 console.error('error:\n', error);
             }
           });
+          
     });
 });
