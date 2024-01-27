@@ -1,9 +1,8 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'] . '/structures/db.php';
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/structures/__utils__.php';
     $q = "SELECT i.img_name, i.img_path FROM imgs AS i";
     $stmn = db::conn()->prepare($q);
-    $imgs = read_resp($stmn->execute());
+    $imgs = db::read_resp($stmn->execute());
 ?> 
 
 <html lang="en">

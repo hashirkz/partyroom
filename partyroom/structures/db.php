@@ -13,7 +13,7 @@ class db {
         try {
             $db = new SQLite3($this->path);
             if (!$db) { die("unable to connect to db at $this->path"); }
-            $this->conn = $db;
+            self::$conn = $db;
         }
     
         catch (Exception $e) {
@@ -25,7 +25,6 @@ class db {
         if (self::$conn === null) {
             $db = new self();
             $db->sqlite3_conn();
-            self::$conn = $db->conn;
         }
         return self::$conn;
     }
